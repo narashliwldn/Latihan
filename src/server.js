@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const Hapi = require('@hapi/hapi');
 const Jwt = require('@hapi/jwt');
-const Inert = require('@hapi/inert');
+// const Inert = require('@hapi/inert');
 
 const notes = require('./api/notes');
 const NotesService = require('./services/postgres/NotesService');
@@ -45,9 +45,9 @@ const init = async () => {
     {
       plugin: Jwt,
     },
-    {
-      plugin: Inert,
-    },
+    // {
+    //   plugin: Inert,
+    // },
   ]);
 
   server.auth.strategy('notesapp_jwt', 'jwt', {
